@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tugasindividu1</title>
+   
+    <style type="text/css">
+        div{
+            background-color: white;
+            color: black;
+
+            width: 280px;
+            height: 653px;
+            padding: 5px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        .oke{
+            margin: 0 auto;
+            padding-top: 150px;
+        }
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+     </head>
+    <body>
+        <div class="oke">
+            <table>
+              <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Nilai</th>
+                <th>Mutu</th>
+              </tr>
+            </table>
+        </div>
+        
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var list = [
+                {
+                    "Nama": "Dodi",
+                    "NIM": 132,
+                    "Nilai": 82
+                },
+                {
+                    "Nama": "Elva",
+                    "NIM": 133,
+                    "Nilai": 67
+                },
+                {
+                    "Nama": "Alice",
+                    "NIM": 110,
+                    "Nilai": 50
+                },
+                {
+                    "Nama": "Thor",
+                    "NIM": 142,
+                    "Nilai": 100
+                },
+                {
+                    "Nama": "Untung",
+                    "NIM": 141,
+                    "Nilai": 53
+                },
+                {
+                    "Nama": "Suropati",
+                    "NIM": 191,
+                    "Nilai": 40
+                },
+                {
+                    "Nama": "Nezuko",
+                    "NIM": 115,
+                    "Nilai": 87
+                },
+                {
+                    "Nama": "Miya",
+                    "NIM": 120,
+                    "Nilai": 60
+                },
+                {
+                    "Nama": "Lesti",
+                    "NIM": 131,
+                    "Nilai": 40
+                },
+                {
+                    "Nama": "Albert",
+                    "NIM": 101,
+                    "Nilai": 98
+                },
+            ]
+
+        var tr;
+            var mutu;
+            for (var i = 0; i < list.length; i++) {
+                if (i % 2 == 1){
+                    tr = $('<tr>');
+                } else{
+                    tr = $('<tr>');
+                }
+                tr.append('<td>' + (i + 1) + "</td>");
+                tr.append('<td>' + list[i].Nama + "</td>");
+                tr.append('<td>' + list[i].NIM + "</td>");
+                tr.append('<td>' + list[i].Nilai + "</td>");
+                if (list[i].Nilai < 10) {
+                    mutu = "E";
+                } else if (list[i].Nilai >= 10 && list[i].Nilai < 40) {
+                    mutu = "D";
+                } else if (list[i].Nilai >= 40 && list[i].Nilai < 50) {
+                    mutu = "C";
+                } else if (list[i].Nilai >= 50 && list[i].Nilai < 60) {
+                    mutu = "BC";
+                } else if (list[i].Nilai >= 60 && list[i].Nilai < 70) {
+                    mutu = "B";
+                } else if (list[i].Nilai >= 70 && list[i].Nilai < 80) {
+                    mutu = "AB";
+                } else if (list[i].Nilai >= 80) {
+                    mutu = "A";
+                } else {
+                    mutu = null;
+                }
+                tr.append('<td>' + mutu + "</td>");
+                $('table').first().append(tr);
+            }
+
+        });
+    </script>
+    </body>    
+</html>
